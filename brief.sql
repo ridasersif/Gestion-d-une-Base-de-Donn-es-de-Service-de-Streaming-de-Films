@@ -25,6 +25,16 @@ CREATE TABLE users(
     subscription_id INT ,
     FOREIGN KEY( subscription_id) REFERENCES subscriptions(subscription_id)
     );
+--création de la table 'movie'
+    CREATE TABLE movie(
+	movie_id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    genre VARCHAR(100) NOT NULL,
+    release_year INT NOT NULL,
+    duration INT NOT NULL,
+    rating VARCHAR(10)   
+)
+
    
     
 
