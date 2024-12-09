@@ -34,8 +34,14 @@ CREATE TABLE users(
     duration INT NOT NULL,
     rating VARCHAR(10)   
 )
-
-   
-    
-
+--création de la table 'watch_history'
+CREATE TABLE watch_history (
+    watch_history_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,  
+    movie_id INT,  
+    watch_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    completion_percentage INT DEFAULT 0,  
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (movie_id) REFERENCES movie(movie_id)
+);
 
