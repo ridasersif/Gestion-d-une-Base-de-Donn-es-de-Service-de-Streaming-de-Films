@@ -14,6 +14,18 @@ CREATE TABLE subscriptions (
     subscription_type ENUM('Basic','Premium') NOT NULL,         
     price DECIMAL(10, 2) NOT NULL,                
 );
+--création de la table 'users'
 
+CREATE TABLE users(
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    registration_date DATE NOT NULL,
+    subscription_id INT ,
+    FOREIGN KEY( subscription_id) REFERENCES subscriptions(subscription_id)
+    );
+   
+    
 
 
