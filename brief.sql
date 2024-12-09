@@ -11,9 +11,8 @@ USE streaming_service;
 
 CREATE TABLE subscriptions (
     subscription_id INT PRIMARY KEY AUTO_INCREMENT,  
-    subscription_type VARCHAR(50) NOT NULL,         
+    subscription_type ENUM('Basic','Premium') NOT NULL,         
     price DECIMAL(10, 2) NOT NULL,                
-    CHECK (subscription_type IN ('Basic', 'Premium')) 
 );
 
 
