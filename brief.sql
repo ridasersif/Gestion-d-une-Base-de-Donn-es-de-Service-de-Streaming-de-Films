@@ -44,4 +44,14 @@ CREATE TABLE watch_history (
     FOREIGN KEY (user_id) REFERENCES users(user_id),
     FOREIGN KEY (movie_id) REFERENCES movie(movie_id)
 );
-
+--création de la table 'review'
+CREATE TABLE review (
+    review_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    movie_id INT,
+    rating INT NOT NULL,
+    review_text TEXT,
+    review_date DATE,
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (movie_id) REFERENCES movie(movie_id)
+);
