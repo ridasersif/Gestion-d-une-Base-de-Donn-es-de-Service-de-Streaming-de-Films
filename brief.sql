@@ -55,3 +55,15 @@ CREATE TABLE review (
     FOREIGN KEY (user_id) REFERENCES users(user_id),
     FOREIGN KEY (movie_id) REFERENCES movie(movie_id)
 );
+
+--insertion des information des users
+INSERT INTO users(first_name, last_name, email, registration_date, subscription_id)
+VALUES 
+    ('Ali', 'Alam', 'ali.alam@example.com', '2024-09-01', 1),
+    ('Zahra', 'Brahim', 'zahra.brahim@example.com', '2023-07-15', 2),
+    ('Omar', 'Jabari', 'omar.jabari@example.com', '2023-01-10', NULL),
+    ('Fatima', 'Khalil', 'fatima.khalil@example.com', '2022-12-05', 1),
+    ('Hassan', 'Tariq', 'hassan.tariq@example.com', '2024-05-20', 2),
+    ('Mariam', 'Salah', 'mariam.salah@example.com', '2023-11-25', NULL),
+    ('Samir', 'Fathi', 'samir.fathi@example.com', '2024-06-12', 1);
+  
