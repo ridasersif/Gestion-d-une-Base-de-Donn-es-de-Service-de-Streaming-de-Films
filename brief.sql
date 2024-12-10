@@ -250,3 +250,9 @@ SELECT * FROM subscriptions;
 SELECT  users.first_name, users.last_name, subscriptions.subscription_type
 FROM users
 JOIN subscriptions ON users.subscription_id = subscriptions.subscription_id;
+
+
+--5):Filtrer les visionnages : Trouver tous les utilisateurs ayant terminé de regarder un film.
+SELECT users.first_name ,users.last_name, watch_history.completion_percentage
+FROM users JOIN  watch_history
+ON users.user_id=watch_history.user_id WHERE completion_percentage=100;
