@@ -239,3 +239,9 @@ VALUES ('Data Science Adventures','Documentary',2024,320,'10.00');
 
 --2):Rechercher des films : Lister tous les films du genre "Comedy" sortis après 2020
 SELECT * FROM movie WHERE genre='Comedy' and release_year>=2020;
+--3):Mise à jour des abonnements : Passer tous les utilisateurs de "Basic" à "Premium"..
+UPDATE subscriptions
+SET
+subscription_type='premium'
+WHERE subscription_type='basic';
+SELECT * FROM subscriptions;
