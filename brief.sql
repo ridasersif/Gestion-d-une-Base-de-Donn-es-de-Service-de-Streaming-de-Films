@@ -238,3 +238,4 @@ INSERT INTO movie(title,genre,release_year,duration,rating)
 VALUES ('Data Science Adventures','Documentary',2024,320,'10.00');
 
 --2):Rechercher des films : Lister tous les films du genre "Comedy" sortis après 2020
+SELECT * FROM movie WHERE genre='Comedy' and release_year>=2020;
