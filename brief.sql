@@ -232,4 +232,9 @@ VALUES
 (6, 9, '2024-10-26', 70),
 (7, 10, '2024-10-25', 60),
 (8, 11, '2024-10-24', 85);
+--*********************************************************
+--1):Insérer un film : Ajouter un nouveau film intitulé Data Science Adventures dans le genre "Documentary".
+INSERT INTO movie(title,genre,release_year,duration,rating)
+VALUES ('Data Science Adventures','Documentary',2024,320,'10.00');
 
+--2):Rechercher des films : Lister tous les films du genre "Comedy" sortis après 2020
