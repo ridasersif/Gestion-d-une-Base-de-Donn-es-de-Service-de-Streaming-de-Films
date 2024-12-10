@@ -256,3 +256,6 @@ JOIN subscriptions ON users.subscription_id = subscriptions.subscription_id;
 SELECT users.first_name ,users.last_name, watch_history.completion_percentage
 FROM users JOIN  watch_history
 ON users.user_id=watch_history.user_id WHERE completion_percentage=100;
+
+--6)Trier et limiter : Afficher les 5 films les plus longs, triés par durée.
+SELECT * FROM movie  ORDER BY duration DESC LIMIT 5;
