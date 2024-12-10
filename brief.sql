@@ -245,3 +245,8 @@ SET
 subscription_type='premium'
 WHERE subscription_type='basic';
 SELECT * FROM subscriptions;
+
+--4):Afficher les abonnements : Joindre les utilisateurs à leurs types d'abonnements
+SELECT  users.first_name, users.last_name, subscriptions.subscription_type
+FROM users
+JOIN subscriptions ON users.subscription_id = subscriptions.subscription_id;
