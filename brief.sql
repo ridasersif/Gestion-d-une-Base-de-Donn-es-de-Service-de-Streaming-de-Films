@@ -60,24 +60,6 @@ INSERT INTO subscriptions (subscription_id, subscription_type, price)
 VALUES
 (1, 'basic', 10.00),
 (2, 'premium', 20.00),
-(3, 'basic', 10.00),
-(4, 'premium', 20.00),
-(5, 'basic', 10.00),
-(6, 'premium', 20.00),
-(7, 'basic', 10.00),
-(8, 'premium', 20.00),
-(9, 'basic', 10.00),
-(10, 'premium', 20.00),
-(11, 'basic', 10.00),
-(12, 'premium', 20.00),
-(13, 'basic', 10.00),
-(14, 'premium', 20.00),
-(15, 'basic', 10.00),
-(16, 'premium', 20.00),
-(17, 'basic', 10.00),
-(18, 'premium', 20.00),
-(19, 'basic', 10.00),
-(20, 'premium', 20.00);
 
 
 --insertion des information des users
@@ -263,7 +245,26 @@ SELECT * FROM movie  ORDER BY duration DESC LIMIT 5;
 
 --7):Agrégation : Calculer le pourcentage moyen de complétion pour chaque film.
 
-SELECT watch_history.movie_id, users.first_name, users.last_name, AVG(watch_history.completion_percentage) AS percentage
-FROM watch_history JOIN users
-ON users.user_id = watch_history.user_id
-GROUP BY watch_history.movie_id, users.first_name, users.last_name;
+SELECT movie.title, AVG(watch_history.completion_percentage)
+AS percentage
+FROM movie JOIN watch_history
+ON movie.movie_id=watch_history.movie_id
+GROUP BY movie.title
+ORDER BY  percentage DESC;
+
+--8):Group By : Grouper les utilisateurs par type d’abonnement et compter le nombre total d’utilisateurs par groupe.
+SELECT subscriptions.subscription_type,
+COUNT(*) as sup
+FROM subscriptions JOIN users
+on users.subscription_id=subscriptions.subscription_id
+GROUP BY subscriptions.subscription_type
+--9):Sous-requête (Bonus): Trouver les films ayant une note moyenne supérieure à 4.
+
+SELECT movie.title, AVG(review.rating) as Rating
+FROM movie JOIN review
+ON movie.movie_id=review.movie_id
+GROUP by movie.title
+HAVING Rating > 8;
+
+
+
